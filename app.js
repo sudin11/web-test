@@ -28,7 +28,8 @@ app.post("/login", (req, res) => {
   const password = req.body.password;
 
   // Generate a secure hash of the password using the "crypto" module
-  const passwordHash = Bcrypt.hashSync(password, 12);
+  const passwordHash = Bcrypt.hashSync(password, 6);
+  console.log(passwordHash);
 
   // Render the second page with the username and password hash as template variables
   res.render("login_successful", {
